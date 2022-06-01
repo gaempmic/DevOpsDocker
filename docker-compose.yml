@@ -2,6 +2,7 @@ version: '3.3'
 
 services:
   db:
+   displayName: 'initiate SQL Data Base'
    image: mysql:5.7
    volumes:
    - db_data:/var/lib/mysql
@@ -15,6 +16,7 @@ services:
   wordpress:
     depends_on:
     - db
+    displayName: 'initiate Wordpress'
     image: wordpress:php7.4-apache
     ports:
     - "8000:80"
